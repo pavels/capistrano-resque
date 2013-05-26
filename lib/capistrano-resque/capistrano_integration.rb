@@ -42,7 +42,7 @@ module CapistranoResque
           "if [ -e #{current_path}/tmp/pids/resque_work_1.pid ]; then \
            for f in `ls #{current_path}/tmp/pids/resque_work*.pid`; \
              do #{try_sudo} kill -s #{resque_kill_signal} `cat $f` \
-             && rm $f ;done \
+             ; rm $f ;done \
            ;fi"
         end
 
